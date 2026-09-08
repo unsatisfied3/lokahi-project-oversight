@@ -146,7 +146,7 @@ export const Chatbot = () => {
         {isOpen ? (
           <X className="h-6 w-6" />
         ) : (
-          <img src={lokahiAvatar} alt="Lokahi" className="h-full w-full object-contain translate-y-1" />
+          <img src={lokahiAvatar} alt="Lokahi" className="h-full w-full object-cover object-[center_25%] scale-125 translate-y-1" />
         )}
       </Button>
 
@@ -165,8 +165,8 @@ export const Chatbot = () => {
               {messages.length === 0 && (
                 <div className="space-y-4 py-4">
                   <div className="flex justify-center mb-4">
-                    <div className="bg-white rounded-full p-1 shadow-sm">
-                      <img src={lokahiAvatar} alt="Lokahi" className="h-20 w-20 object-contain translate-y-1" />
+                    <div className="bg-white rounded-full p-1 shadow-sm overflow-hidden h-24 w-24 flex items-center justify-center">
+                      <img src={lokahiAvatar} alt="Lokahi" className="h-full w-full object-cover object-[center_25%] scale-125 translate-y-1" />
                     </div>
                   </div>
                   <p className="text-center text-muted-foreground text-sm mb-4">
