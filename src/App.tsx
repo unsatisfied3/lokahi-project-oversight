@@ -34,7 +34,7 @@ const App = () => (
       <Chatbot />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Navigate to="/admin/dashboard" replace />} />
           <Route path="/public" element={<PublicCatalog />} />
           <Route path="/public/catalog" element={<PublicCatalog />} />
           <Route path="/public/api-info" element={<PublicApiInfo />} />
