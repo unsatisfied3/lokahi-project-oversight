@@ -140,13 +140,13 @@ export const Chatbot = () => {
       {/* Floating button */}
       <Button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg z-50 p-0 overflow-hidden"
+        className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg z-50 p-0 overflow-hidden bg-white hover:bg-white text-foreground"
         size="icon"
       >
         {isOpen ? (
           <X className="h-6 w-6" />
         ) : (
-          <img src={lokahiAvatar} alt="Lokahi" className="h-full w-full object-cover" />
+          <img src={lokahiAvatar} alt="Lokahi" className="h-full w-full object-contain translate-y-1" />
         )}
       </Button>
 
@@ -165,7 +165,9 @@ export const Chatbot = () => {
               {messages.length === 0 && (
                 <div className="space-y-4 py-4">
                   <div className="flex justify-center mb-4">
-                    <img src={lokahiAvatar} alt="Lokahi" className="h-20 w-20 object-contain" />
+                    <div className="bg-white rounded-full p-1 shadow-sm">
+                      <img src={lokahiAvatar} alt="Lokahi" className="h-20 w-20 object-contain translate-y-1" />
+                    </div>
                   </div>
                   <p className="text-center text-muted-foreground text-sm mb-4">
                     Hi! I'm Lokahi. How can I help you today?
