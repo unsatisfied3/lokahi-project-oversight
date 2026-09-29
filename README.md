@@ -25,8 +25,8 @@ The root route currently opens the administrator dashboard. The repository also 
 Install Node.js and npm compatible with the Vite version in [package.json](package.json), then run:
 
 ```sh
-git clone https://github.com/unsatisfied3/aloha-ivv-gateway.git
-cd aloha-ivv-gateway
+git clone https://github.com/unsatisfied3/lokahi-project-oversight.git
+cd lokahi-project-oversight
 npm ci
 ```
 
