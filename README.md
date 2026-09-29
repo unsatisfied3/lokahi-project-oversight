@@ -1,4 +1,4 @@
-# Lōkahi · IV&V Portal
+# Lōkahi · Project Oversight Dashboard
 
 A web app prototype exploring how teams can review, track, and publish Independent Verification and Validation (IV&V) project reports.
 
