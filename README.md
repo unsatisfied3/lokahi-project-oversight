@@ -1,73 +1,82 @@
-# Welcome to your Lovable project
+# Lōkahi · IV&V Portal
 
-## Project info
+A web app prototype exploring how teams can review, track, and publish Independent Verification and Validation (IV&V) project reports.
 
-**URL**: https://lovable.dev/projects/b18ad444-434f-4c74-aeaa-7d306cead37c
+The interface brings together administrator workflows, vendor report submission screens, and a public report catalog.
 
-## How can I edit this code?
+**Status:** Design and development prototype. Dashboard metrics and public catalog entries include sample data; they are not verified government reporting.
 
-There are several ways of editing your application.
+## Explore the prototype
 
-**Use Lovable**
+| Route | Experience |
+| --- | --- |
+| `/admin/dashboard` | Report overview, metrics, and charts |
+| `/admin/projects` | Project management screens |
+| `/admin/reports` | Report review screens |
+| `/vendor/dashboard` | Vendor overview |
+| `/vendor/reports` | Vendor report list |
+| `/vendor/report/new` | Report submission form |
+| `/public/catalog` | Searchable public report catalog |
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b18ad444-434f-4c74-aeaa-7d306cead37c) and start prompting.
+The root route currently opens the administrator dashboard. The repository also includes authentication screens, a Supabase integration, and a chat edge function. Backend-dependent features require a configured Supabase project; the presence of a screen does not mean its production workflow is complete.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Run locally
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Install Node.js and npm compatible with the Vite version in [package.json](package.json), then run:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+git clone https://github.com/unsatisfied3/aloha-ivv-gateway.git
+cd aloha-ivv-gateway
+npm ci
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Configure your own Supabase project in an untracked `.env.local` file:
 
-# Step 3: Install the necessary dependencies.
-npm i
+```dotenv
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_publishable_key
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+These variables are read by the browser client. Use a publishable key, never a service-role key. Database setup, access policies, authentication settings, and edge-function configuration must be handled in the corresponding Supabase project.
+
+Start the app:
+
+```sh
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open the local URL printed by Vite.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Commands
 
-**Use GitHub Codespaces**
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run lint` | Run ESLint |
+| `npm run build` | Create a production build |
+| `npm run build:dev` | Build in development mode |
+| `npm run preview` | Preview a local build |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Built with
 
-## What technologies are used for this project?
+React, TypeScript, Vite, Tailwind CSS, shadcn/ui, React Router, TanStack Query, Recharts, and Supabase.
 
-This project is built with:
+## Project structure
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+| Folder | Contents |
+| --- | --- |
+| `src/pages/` | Administrator, vendor, public, and authentication screens |
+| `src/components/` | Shared interface components |
+| `src/integrations/supabase/` | Supabase client and generated types |
+| `src/assets/` | Branding and images |
+| `supabase/functions/` | Edge-function source |
 
-## How can I deploy this project?
+## Lovable project
 
-Simply open [Lovable](https://lovable.dev/projects/b18ad444-434f-4c74-aeaa-7d306cead37c) and click on Share -> Publish.
+This project was created with Lovable. The original workspace is preserved here:
 
-## Can I connect a custom domain to my Lovable project?
+[Open the Lovable project](https://lovable.dev/projects/b18ad444-434f-4c74-aeaa-7d306cead37c)
 
-Yes, you can!
+## Designer
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+[Aveline Wang](https://www.avelinewang.com/)
